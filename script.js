@@ -1,0 +1,139 @@
+// Mobile Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+}
+
+// Close menu when a link is clicked
+if (navMenu) {
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+        });
+    });
+}
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Form submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = this.querySelector('input[type="text"]').value;
+        const email = this.querySelector('input[type="email"]').value;
+        const subject = this.querySelector('input[placeholder="Subject"]').value;
+        const message = this.querySelector('textarea').value;
+        
+        // Basic validation
+        if (name && email && subject && message) {
+            // Here you would typically send the form data to a server
+            alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon.`);
+            
+            // Reset form
+            this.reset();
+        } else {
+            alert('Please fill in all fields');
+        }
+    });
+}
+
+// Add scroll effect to navbar
+let lastScrollTop = 0;
+const navbar_element = document.querySelector('.navbar');
+
+if (navbar_element) {
+    window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 50) {
+            navbar_element.style.boxShadow = '0 2px 20px rgba(0, 102, 255, 0.15)';
+        } else {
+            navbar_element.style.boxShadow = 'none';
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+}
+
+// Intersection Observer for fade-in animations on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe project cards and skill categories
+document.querySelectorAll('.project-card, .skill-category, .stat').forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'all 0.6s ease';
+    observer.observe(element);
+});
+
+// Active nav link highlighting
+window.addEventListener('scroll', () => {
+    let current = '';
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.style.color = 'var(--primary-color)';
+        } else {
+            link.style.color = 'var(--light-text)';
+        }
+    });
+});
+
+// Parallax effect for hero section
+const heroSection = document.querySelector('.hero');
+if (heroSection) {
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset;
+        heroSection.style.backgroundPosition = `0px ${scrollPosition * 0.5}px`;
+    });
+}
+
+// Add loading animation
+window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
+});
+
+document.body.style.opacity = '0';
+document.body.style.transition = 'opacity 0.5s ease';
