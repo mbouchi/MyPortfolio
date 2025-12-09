@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+
+# Crawl-delay in seconds
+Crawl-delay: 1
+
+# Allow search engines to follow links
+Allow: /
+
+# Sitemap location
+Sitemap: https://mbouchi.com/sitemap.xml
