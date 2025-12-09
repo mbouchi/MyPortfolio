@@ -36,22 +36,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        
         // Get form values
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const subject = this.querySelector('input[placeholder="Subject"]').value;
-        const message = this.querySelector('textarea').value;
+        const name = this.querySelector('input[name="name"]').value;
+        const email = this.querySelector('input[name="email"]').value;
+        const subject = this.querySelector('input[name="subject"]').value;
+        const message = this.querySelector('textarea[name="message"]').value;
         
-        // Basic validation
+        // Email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        // Validate all fields and email format
         if (name && email && subject && message) {
-            // Here you would typically send the form data to a server
-            alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon.`);
-            
-            // Reset form
-            this.reset();
+            if (emailRegex.test(email)) {
+                // Email is valid, allow form submission
+                alert(`Thank you, ${name}! Your message has been sent successfully. I'll get back to you soon.`);
+                // Form will submit naturally to Formspree
+            } else {
+                // Email is invalid
+                e.preventDefault();
+                alert('Please enter a valid email address');
+            }
         } else {
+            // Required fields are empty
+            e.preventDefault();
             alert('Please fill in all fields');
         }
     });
