@@ -48,10 +48,13 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    background: linear-gradient(135deg, #85764d, #0b2523);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #85764d;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #ffffff;
 }
 
 .nav-menu {
@@ -208,9 +211,9 @@ body {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     text-align: center;
-    background: linear-gradient(135deg, #85764d, #0b2523);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #85764d;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .about-content {
@@ -269,6 +272,22 @@ body {
     color: #85764d;
     border: 2px solid var(--border-color);
     margin: 0 auto;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 2px solid #85764d;
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(133, 118, 77, 0.3);
 }
 
 /* Projects Section */
