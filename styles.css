@@ -5,13 +5,13 @@
 }
 
 :root {
-    --primary-color: #0066ff;
-    --secondary-color: #00d9ff;
-    --dark-bg: #0a0e27;
-    --dark-card: #1a2240;
+    --primary-color: #0b2523;
+    --secondary-color: #85764d;
+    --dark-bg: #0f1410;
+    --dark-card: #1a2420;
     --light-text: #e0e0e0;
-    --accent-color: #ff6b6b;
-    --border-color: #2a3a5a;
+    --accent-color: #85764d;
+    --border-color: #2a3a2a;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
 
 /* Navigation Bar */
 .navbar {
-    background: rgba(10, 14, 39, 0.95);
+    background: rgba(15, 20, 16, 0.95);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
@@ -48,7 +48,7 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, #85764d, #0b2523);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
@@ -68,7 +68,7 @@ body {
 }
 
 .nav-menu a:hover {
-    color: var(--primary-color);
+    color: #85764d;
 }
 
 .hamburger {
@@ -81,7 +81,7 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: var(--primary-color);
+    background: #85764d;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
@@ -94,7 +94,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 217, 255, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(11, 37, 35, 0.1) 0%, rgba(133, 118, 77, 0.05) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -104,7 +104,7 @@ body {
     position: absolute;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(11, 37, 35, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -122,7 +122,7 @@ body {
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #ffffff 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, #85764d 0%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: fadeInDown 0.8s ease;
@@ -130,7 +130,7 @@ body {
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: var(--secondary-color);
+    color: #85764d;
     margin-bottom: 1rem;
     animation: fadeInUp 0.8s ease 0.1s both;
 }
@@ -167,19 +167,19 @@ body {
 }
 
 .btn-primary:hover {
-    background: #0052cc;
+    background: #082420;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(11, 37, 35, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
+    color: #85764d;
+    border: 2px solid #85764d;
 }
 
 .btn-secondary:hover {
-    background: rgba(0, 217, 255, 0.1);
+    background: rgba(133, 118, 77, 0.1);
     transform: translateY(-2px);
 }
 
@@ -201,14 +201,14 @@ body {
 /* About Section */
 .about {
     padding: 100px 0;
-    background: linear-gradient(180deg, rgba(26, 34, 64, 0.5) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(26, 36, 32, 0.5) 0%, transparent 100%);
 }
 
 .section-title {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     text-align: center;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, #85764d, #0b2523);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -233,7 +233,7 @@ body {
 }
 
 .stat {
-    background: rgba(0, 102, 255, 0.1);
+    background: rgba(11, 37, 35, 0.1);
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
@@ -242,13 +242,13 @@ body {
 }
 
 .stat:hover {
-    background: rgba(0, 102, 255, 0.2);
+    background: rgba(11, 37, 35, 0.2);
     transform: translateY(-5px);
 }
 
 .stat h3 {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: #85764d;
     margin-bottom: 0.5rem;
 }
 
@@ -260,13 +260,13 @@ body {
 .avatar-placeholder {
     width: 300px;
     height: 300px;
-    background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(0, 217, 255, 0.2));
+    background: linear-gradient(135deg, rgba(11, 37, 35, 0.2), rgba(133, 118, 77, 0.2));
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 6rem;
-    color: var(--primary-color);
+    color: #85764d;
     border: 2px solid var(--border-color);
     margin: 0 auto;
 }
@@ -293,21 +293,21 @@ body {
 }
 
 .project-card:hover {
-    border-color: var(--primary-color);
+    border-color: #85764d;
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 102, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(133, 118, 77, 0.2);
 }
 
 .project-image {
     width: 80px;
     height: 80px;
-    background: rgba(0, 102, 255, 0.1);
+    background: rgba(11, 37, 35, 0.1);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: #85764d;
     margin-bottom: 1.5rem;
 }
 
@@ -330,29 +330,29 @@ body {
 }
 
 .project-tags span {
-    background: rgba(0, 102, 255, 0.15);
+    background: rgba(11, 37, 35, 0.15);
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.85rem;
-    color: var(--secondary-color);
-    border: 1px solid rgba(0, 217, 255, 0.3);
+    color: #85764d;
+    border: 1px solid rgba(133, 118, 77, 0.3);
 }
 
 .project-link {
-    color: var(--primary-color);
+    color: #0b2523;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .project-link:hover {
-    color: var(--secondary-color);
+    color: #85764d;
 }
 
 /* Skills Section */
 .skills {
     padding: 100px 0;
-    background: linear-gradient(180deg, rgba(26, 34, 64, 0.5) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(26, 36, 32, 0.5) 0%, transparent 100%);
 }
 
 .skills-grid {
@@ -370,12 +370,12 @@ body {
 }
 
 .skill-category:hover {
-    border-color: var(--primary-color);
-    background: rgba(0, 102, 255, 0.05);
+    border-color: #85764d;
+    background: rgba(11, 37, 35, 0.05);
 }
 
 .skill-category h3 {
-    color: var(--primary-color);
+    color: #85764d;
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
 }
@@ -395,7 +395,7 @@ body {
     content: '▸';
     position: absolute;
     left: 0;
-    color: var(--primary-color);
+    color: #85764d;
 }
 
 /* Contact Section */
@@ -425,7 +425,7 @@ body {
 .contact-form input,
 .contact-form textarea {
     padding: 12px 20px;
-    background: var(--dark-card);
+    background: rgba(26, 36, 32, 0.6);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     color: var(--light-text);
@@ -437,8 +437,8 @@ body {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
-    background: rgba(0, 102, 255, 0.05);
+    border-color: #85764d;
+    background: rgba(11, 37, 35, 0.05);
 }
 
 .contact-form textarea {
@@ -460,7 +460,7 @@ body {
 
 .info-item i {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: #85764d;
     margin-top: 0.5rem;
 }
 
@@ -482,26 +482,26 @@ body {
 .social-link {
     width: 45px;
     height: 45px;
-    background: rgba(0, 102, 255, 0.1);
+    background: rgba(11, 37, 35, 0.1);
     border: 1px solid var(--border-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
+    color: #85764d;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
-    background: var(--primary-color);
+    background: #85764d;
     color: white;
     transform: translateY(-5px);
 }
 
 /* Footer */
 .footer {
-    background: rgba(10, 14, 39, 0.95);
+    background: rgba(15, 20, 16, 0.95);
     border-top: 1px solid var(--border-color);
     padding: 2rem 0;
     text-align: center;
