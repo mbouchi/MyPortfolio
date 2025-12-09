@@ -36,6 +36,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
         // Get form values
         const name = this.querySelector('input[name="name"]').value;
         const email = this.querySelector('input[name="email"]').value;
@@ -48,19 +50,66 @@ if (contactForm) {
         // Validate all fields and email format
         if (name && email && subject && message) {
             if (emailRegex.test(email)) {
-                // Email is valid, allow form submission
-                alert(`Thank you, ${name}! Your message has been sent successfully. I'll get back to you soon.`);
-                // Form will submit naturally to Formspree
+                // Email is valid, send via Formspree
+                const formData = new FormData(this);
+                
+                fetch('https://formspree.io/f/xldqwkrp', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Show success notification
+                        showSuccessNotification(name);
+                        // Reset form
+                        contactForm.reset();
+                    } else {
+                        alert('There was an error sending your message. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error sending your message. Please try again.');
+                });
             } else {
                 // Email is invalid
-                e.preventDefault();
                 alert('Please enter a valid email address');
             }
         } else {
             // Required fields are empty
-            e.preventDefault();
             alert('Please fill in all fields');
         }
+    });
+}
+
+// Success notification function
+function showSuccessNotification(name) {
+    const notification = document.createElement('div');
+    notification.className = 'success-notification';
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <div>
+                <h4>Message Sent!</h4>
+                <p>Thank you, ${name}! Your message has been sent successfully. I'll get back to you soon.</p>
+            </div>
+            <button class="notification-close">&times;</button>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        notification.remove();
+    }, 5000);
+    
+    // Close button functionality
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+        notification.remove();
     });
 }
 
