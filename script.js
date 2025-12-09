@@ -66,7 +66,7 @@ if (navbar_element) {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > 50) {
-            navbar_element.style.boxShadow = '0 2px 20px rgba(0, 102, 255, 0.15)';
+            navbar_element.style.boxShadow = '0 2px 20px rgba(133, 118, 77, 0.2)';
         } else {
             navbar_element.style.boxShadow = 'none';
         }
@@ -114,8 +114,10 @@ window.addEventListener('scroll', () => {
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
-            link.style.color = 'var(--primary-color)';
+            link.classList.add('active');
+            link.style.color = '#85764d';
         } else {
+            link.classList.remove('active');
             link.style.color = 'var(--light-text)';
         }
     });
