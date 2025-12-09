@@ -62,7 +62,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .nav-menu a {
@@ -503,6 +503,196 @@ body {
     padding: 100px 0;
 }
 
+/* Certifications Section */
+.certifications {
+    padding: 100px 0;
+    background: linear-gradient(180deg, rgba(26, 36, 32, 0.5) 0%, transparent 100%);
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.certification-card {
+    background: var(--dark-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.certification-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #85764d 0%, transparent 100%);
+}
+
+.certification-card:hover {
+    border-color: #85764d;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(133, 118, 77, 0.2);
+}
+
+.certification-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.certification-header i {
+    font-size: 2.5rem;
+    color: #85764d;
+}
+
+.certification-badge {
+    background: rgba(133, 118, 77, 0.15);
+    color: #85764d;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(133, 118, 77, 0.3);
+}
+
+.certification-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    line-height: 1.4;
+}
+
+.certification-issuer {
+    color: #85764d;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+.certification-date {
+    color: rgba(224, 224, 224, 0.6);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.certification-description {
+    color: rgba(224, 224, 224, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.certification-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.certification-skills span {
+    background: rgba(11, 37, 35, 0.15);
+    padding: 0.35rem 0.7rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: #85764d;
+    border: 1px solid rgba(133, 118, 77, 0.3);
+}
+
+/* Languages Section */
+.languages {
+    padding: 100px 0;
+    background: linear-gradient(180deg, rgba(26, 36, 32, 0.5) 0%, transparent 100%);
+}
+
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.language-card {
+    background: var(--dark-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.language-card:hover {
+    border-color: #85764d;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(133, 118, 77, 0.2);
+}
+
+.language-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.language-header i {
+    font-size: 2rem;
+    color: #85764d;
+}
+
+.language-header h3 {
+    font-size: 1.3rem;
+    color: white;
+    margin: 0;
+}
+
+.proficiency-level {
+    margin-bottom: 1.5rem;
+}
+
+.proficiency-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(11, 37, 35, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.proficiency-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #85764d 0%, #b8a878 100%);
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+
+.language-card:hover .proficiency-fill {
+    box-shadow: 0 0 10px rgba(133, 118, 77, 0.5);
+}
+
+.proficiency-text {
+    font-size: 0.85rem;
+    color: #85764d;
+    font-weight: 600;
+}
+
+.language-card p {
+    color: rgba(224, 224, 224, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contact {
+    padding: 100px 0;
+}
+
 .contact-subtitle {
     text-align: center;
     font-size: 1.1rem;
@@ -607,6 +797,25 @@ body {
     transform: translateY(-5px);
 }
 
+.btn-download-cv {
+    width: fit-content;
+    justify-content: center;
+    background: rgba(11, 37, 35, 0.1);
+    border: 1px solid var(--border-color);
+    color: #85764d;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-download-cv:hover {
+    background: #85764d;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(133, 118, 77, 0.3);
+}
+
 /* Success Notification */
 .success-notification {
     position: fixed;
@@ -684,6 +893,37 @@ body {
     .notification-content {
         max-width: 100%;
     }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #85764d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(133, 118, 77, 0.4);
+}
+
+.back-to-top:hover {
+    background: #b8a878;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(133, 118, 77, 0.6);
+}
+
+.back-to-top.show {
+    display: flex;
 }
 
 /* Footer */

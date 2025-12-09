@@ -195,3 +195,23 @@ window.addEventListener('load', () => {
 
 document.body.style.opacity = '0';
 document.body.style.transition = 'opacity 0.5s ease';
+
+// Back to Top Button
+const backToTopBtn = document.getElementById('backToTopBtn');
+
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
