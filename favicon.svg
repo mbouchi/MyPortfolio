@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background -->
+  <rect width="100" height="100" fill="#0b2523"/>
+  
+  <!-- Letter M -->
+  <text x="50" y="70" font-size="80" font-weight="bold" fill="#85764d" text-anchor="middle" font-family="Arial, sans-serif">M</text>
+</svg>
+
