@@ -1,12 +1,32 @@
+# Portfolio website robots.txt configuration
 User-agent: *
 Allow: /
 Disallow: /assets/
+Disallow: /*.pdf$
 
-# Crawl-delay in seconds
+# Crawl-delay in seconds (friendly to server resources)
+Crawl-delay: 1
+Request-rate: 10/1m
+
+# Specific rules for common bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 1
 
-# Allow search engines to follow links
+User-agent: Slurp
 Allow: /
+Crawl-delay: 1
+
+# Block bad bots if needed
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
 
 # Sitemap location
 Sitemap: https://mbouchi.com/sitemap.xml
