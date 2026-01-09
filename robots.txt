@@ -1,6 +1,8 @@
 # Portfolio website robots.txt configuration
 User-agent: *
 Allow: /
+Allow: /favicon.ico
+Allow: /favicon.svg
 Disallow: /assets/
 Disallow: /*.pdf$
 
