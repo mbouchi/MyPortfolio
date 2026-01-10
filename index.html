@@ -69,7 +69,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="https://tm-apex.hashnode.dev/" target="_blank">Blog </a><span class="fa fa-external-link"></span></li>
+                <!-- <li><a href="https://tm-apex.hashnode.dev/" target="_blank">Blog </a><span class="fa fa-external-link"></span></li> -->
             </ul>
             <div class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" role="button" tabindex="0">
                 <span></span>
@@ -418,6 +418,33 @@
                     </div>
                     <p>Native speaker with excellent proficiency in both written and verbal communication</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <p class="blog-subtitle">Articles on Oracle, APEX, SQL, and Database Development</p>
+            <div class="blog-gallery-wrapper">
+                <button class="blog-scroll-button prev" id="scrollPrev" aria-label="Scroll blog posts left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="blog-gallery-scroll">
+                    <div class="blog-grid" id="blogContainer">
+                        <div class="blog-loading">
+                            <div class="spinner"></div>
+                            <p>Loading blog posts...</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="blog-scroll-button next" id="scrollNext" aria-label="Scroll blog posts right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="blog-footer">
+                <a href="https://tm-apex.hashnode.dev/" target="_blank" class="btn btn-secondary">Read All Articles <span class="fa fa-external-link"></span></a>
             </div>
         </div>
     </section>
