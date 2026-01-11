@@ -1363,4 +1363,48 @@ body {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+
+    /* Hide blog card cover on mobile */
+    .blog-card-cover {
+        display: none;
+    }
+
+    .blog-grid {
+        height: auto;
+    }
+
+    .blog-card {
+        flex: 0 0 280px;
+        min-width: 280px;
+    }
+
+    .blog-gallery-wrapper {
+        gap: 1rem;
+        padding: 0;
+    }
+
+    .blog-scroll-button {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .blog-card-header {
+        padding: 1rem;
+    }
+
+    .blog-card-title {
+        font-size: 1.1rem;
+        margin: 0 0 0.75rem 0;
+    }
+
+    .blog-card-body {
+        padding: 1rem;
+    }
+
+    .blog-card-excerpt {
+        font-size: 0.85rem;
+        -webkit-line-clamp: 2;
+    }
 }
