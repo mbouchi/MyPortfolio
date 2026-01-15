@@ -746,19 +746,19 @@ body {
 .blog-gallery-scroll {
     flex: 1;
     overflow: hidden;
-    border-radius: 16px;
-    background: linear-gradient(135deg, rgba(26, 36, 32, 0.5) 0%, rgba(11, 37, 35, 0.3) 100%);
+    /* border-radius: 16px; */
+    /* background: linear-gradient(135deg, rgba(26, 36, 32, 0.5) 0%, rgba(11, 37, 35, 0.3) 100%); */
     /* padding: 1.5rem 0; */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(133, 118, 77, 0.1);
+    /* border: 1px solid rgba(133, 118, 77, 0.1); */
 }
 
 .blog-grid {
     display: flex;
     gap: 2rem;
     /* padding: 0 1.5rem; */
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    /* padding-top: 1.5rem;
+    padding-bottom: 1.5rem; */
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
