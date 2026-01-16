@@ -3,6 +3,7 @@ User-agent: *
 Allow: /
 Allow: /favicon.ico
 Allow: /favicon.svg
+Allow: /assets/images/
 Disallow: /assets/
 Disallow: /*.pdf$
 
