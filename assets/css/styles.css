@@ -127,6 +127,94 @@ body {
     z-index: 0;
 }
 
+.hero-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(133, 118, 77, 0.6), rgba(133, 118, 77, 0.2));
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-dot:nth-child(1) {
+    width: 8px;
+    height: 8px;
+    top: 20%;
+    left: 10%;
+    animation: float1 20s infinite ease-in-out;
+}
+
+.hero-dot:nth-child(2) {
+    width: 6px;
+    height: 6px;
+    top: 70%;
+    left: 15%;
+    animation: float2 25s infinite ease-in-out;
+}
+
+.hero-dot:nth-child(3) {
+    width: 5px;
+    height: 5px;
+    top: 30%;
+    right: 20%;
+    animation: float3 30s infinite ease-in-out;
+}
+
+.hero-dot:nth-child(4) {
+    width: 7px;
+    height: 7px;
+    bottom: 25%;
+    right: 10%;
+    animation: float1 28s infinite ease-in-out reverse;
+}
+
+.hero-dot:nth-child(5) {
+    width: 6px;
+    height: 6px;
+    top: 50%;
+    right: 5%;
+    animation: float2 22s infinite ease-in-out reverse;
+}
+
+.hero-dot:nth-child(6) {
+    width: 5px;
+    height: 5px;
+    top: 15%;
+    left: 50%;
+    animation: float3 26s infinite ease-in-out;
+}
+
+.hero-dot:nth-child(7) {
+    width: 7px;
+    height: 7px;
+    bottom: 35%;
+    left: 20%;
+    animation: float1 24s infinite ease-in-out reverse;
+}
+
+.hero-dot:nth-child(8) {
+    width: 6px;
+    height: 6px;
+    top: 60%;
+    right: 35%;
+    animation: float2 27s infinite ease-in-out;
+}
+
+.hero-dot:nth-child(9) {
+    width: 5px;
+    height: 5px;
+    bottom: 20%;
+    right: 40%;
+    animation: float3 23s infinite ease-in-out reverse;
+}
+
+.hero-dot:nth-child(10) {
+    width: 8px;
+    height: 8px;
+    top: 40%;
+    left: 5%;
+    animation: float1 29s infinite ease-in-out;
+}
+
 .hero-content {
     position: relative;
     z-index: 1;
@@ -318,6 +406,51 @@ body {
     }
     50% {
         transform: translateY(-10px);
+    }
+}
+
+@keyframes float1 {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(20px, -20px);
+    }
+    50% {
+        transform: translate(0, -40px);
+    }
+    75% {
+        transform: translate(-20px, -20px);
+    }
+}
+
+@keyframes float2 {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-30px, 15px);
+    }
+    50% {
+        transform: translate(-10px, 40px);
+    }
+    75% {
+        transform: translate(20px, 15px);
+    }
+}
+
+@keyframes float3 {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(25px, 25px);
+    }
+    50% {
+        transform: translate(15px, -30px);
+    }
+    75% {
+        transform: translate(-25px, 10px);
     }
 }
 
