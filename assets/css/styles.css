@@ -108,7 +108,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, rgba(11, 37, 35, 0.1) 0%, rgba(133, 118, 77, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(11, 37, 35, 0.1) 0%, rgba(133, 118, 77, 0.05) 100%),
+                url('../images/background.png') center/cover no-repeat;
     position: relative;
     overflow: hidden;
 }
@@ -162,6 +163,114 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+/* Social Sharing Section */
+.share-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.share-label {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.share-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--accent-color);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    z-index: -1;
+}
+
+.share-btn:hover {
+    color: var(--dark-bg);
+    border-color: var(--accent-color);
+}
+
+.share-btn:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.share-btn.share-linkedin:hover {
+    border-color: #0077B5;
+}
+
+.share-btn.share-linkedin:hover::before {
+    background: #0077B5;
+}
+
+.share-btn.share-twitter:hover {
+    border-color: #1DA1F2;
+}
+
+.share-btn.share-twitter:hover::before {
+    background: #1DA1F2;
+}
+
+.share-btn.share-facebook:hover {
+    border-color: #1877F2;
+}
+
+.share-btn.share-facebook:hover::before {
+    background: #1877F2;
+}
+
+.share-btn.share-email:hover {
+    border-color: var(--accent-color);
+}
+
+.share-btn.share-email:hover::before {
+    background: var(--accent-color);
+}
+
+.share-btn.share-copy:hover {
+    border-color: var(--accent-color);
+}
+
+.share-btn.share-copy:hover::before {
+    background: var(--accent-color);
+}
+
+.share-btn:active {
+    transform: scale(0.95);
 }
 
 .btn {
@@ -1426,6 +1535,20 @@ body {
 
     .hero-subtitle {
         font-size: 1.2rem;
+    }
+
+    .share-section {
+        margin-top: 2rem;
+    }
+
+    .share-buttons {
+        gap: 0.75rem;
+    }
+
+    .share-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
     }
 
     .nav-menu {

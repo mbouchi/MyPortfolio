@@ -384,3 +384,79 @@ if (document.readyState === 'loading') {
 } else {
     fetchHashnodeBlogs();
 }
+
+// Social Sharing Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const shareButtons = document.querySelectorAll('.share-btn');
+    const pageUrl = window.location.href;
+    const pageTitle = 'Oracle APEX Freelancer & Consultant | MBouchi';
+    const pageDescription = 'Expert Oracle APEX Developer available for freelance projects and consulting.';
+
+    shareButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (this.classList.contains('share-linkedin')) {
+                shareOnLinkedIn();
+            } else if (this.classList.contains('share-twitter')) {
+                shareOnTwitter();
+            } else if (this.classList.contains('share-facebook')) {
+                shareOnFacebook();
+            } else if (this.classList.contains('share-email')) {
+                shareViaEmail();
+            } else if (this.classList.contains('share-copy')) {
+                copyToClipboard();
+            }
+        });
+    });
+
+    function shareOnLinkedIn() {
+        const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+        window.open(linkedinUrl, '_blank', 'width=550,height=680');
+    }
+
+    function shareOnTwitter() {
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(pageTitle)}&url=${encodeURIComponent(pageUrl)}`;
+        window.open(twitterUrl, '_blank', 'width=550,height=420');
+    }
+
+    function shareOnFacebook() {
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+        window.open(facebookUrl, '_blank', 'width=550,height=680');
+    }
+
+    function shareViaEmail() {
+        const subject = encodeURIComponent(pageTitle);
+        const body = encodeURIComponent(`Check out this amazing Oracle APEX developer profile:\n\n${pageDescription}\n\n${pageUrl}`);
+        window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    }
+
+    function copyToClipboard() {
+        const copyButton = document.querySelector('.share-copy');
+        navigator.clipboard.writeText(pageUrl).then(() => {
+            // Show feedback
+            const originalIcon = copyButton.innerHTML;
+            copyButton.innerHTML = '<i class="fas fa-check"></i>';
+            
+            setTimeout(() => {
+                copyButton.innerHTML = originalIcon;
+            }, 2000);
+        }).catch(() => {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = pageUrl;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            // Show feedback
+            const originalIcon = copyButton.innerHTML;
+            copyButton.innerHTML = '<i class="fas fa-check"></i>';
+            
+            setTimeout(() => {
+                copyButton.innerHTML = originalIcon;
+            }, 2000);
+        });
+    }
+});
